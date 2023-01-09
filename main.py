@@ -1,5 +1,5 @@
 import os
-import random
+
 def makeCommits (days : int):
     if days < 1:
         os.system('git push')
@@ -14,6 +14,6 @@ def makeCommits (days : int):
         # commit 
         os.system('git commit --date="'+ dates +'" -m "First commit for the day!"')
 
-        return days * makeCommits(days - int(random.randint(1,6)))
+        return days * makeCommits(days - 1)
 
 makeCommits(50)
